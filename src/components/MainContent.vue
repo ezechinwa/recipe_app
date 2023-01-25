@@ -18,11 +18,11 @@
 <!--      <div class="grid grid-cols-1 lg:grid-cols-3 gap-16 mt-16">-->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mt-16" >
 <!--        'idMeal','strMeal','strMealThumb'-->
-        <div  v-for="(meal,i) in getFoodItems">
-          <FoodCards :idMeal=meal.idMeal :strMeal=meal.strMeal :strMealThumb=meal.strMealThumb />
+        <div  v-for="(meal,i) in getFoodItems" :id="i">
+          <FoodCards :idMeal=meal.idMeal :strMeal=meal.strMeal :strMealThumb=meal.strMealThumb  />
         </div>
 
-        <DetailCards class=" col-span-1  md:col-span-2 lg:col-span-3" />
+<!--        <detailcards class=" col-span-1  md:col-span-2 lg:col-span-3 " />-->
 
 
       </div>
@@ -39,12 +39,13 @@
 
 <script>
 import FoodCards from "./UIComponents/FoodCards.vue";
-import DetailCards from "./UIComponents/DetailCards.vue";
+import detailcards from "./UIComponents/DetailCards.vue";
 import MenuItem from "./UIComponents/MenuItem.vue";
+
 
 export default {
   name: "MainContent",
-  components: {MenuItem, DetailCards, FoodCards},
+  components: {MenuItem, detailcards, FoodCards},
   mounted(){
   //  console.log("getfooditems", this.getFoodItems)
   },
@@ -73,9 +74,7 @@ export default {
     }
   },
   methods:{
-    showitems(){
-      console.log(this.getFoodItems)
-    }
+
   }
 }
 </script>

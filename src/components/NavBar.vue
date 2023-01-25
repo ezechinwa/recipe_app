@@ -26,7 +26,7 @@
 
           </div>
 
-          <div class="flex flex-col bg-white rounded-none mt-0 border-l border-r border-b p-2 border-gray-400 rounded-b-lg absolute top-10 z-50 w-full"  @mouseover="hover = true"
+          <div class="flex flex-col bg-white rounded-none mt-0 border-l border-r border-b p-2 border-gray-400 rounded-b-lg absolute top-10 z-50 w-full overflow-scroll"  @mouseover="hover = true"
                @mouseleave="hover = false" v-show="favorites.length>0 && hover">
             <div v-for="(favorite , index) in favorites">
               <FavoriteItems :idMeal="favorite.idMeal" :strMeal="favorite.strMeal" :strMealThumb="favorite.strMealThumb"/>
