@@ -6,7 +6,7 @@
             <div v-for="(item, index) in items">
               <div class="bg-white flex rounded-xl items-center mx-3 my-3 space-x-10 p-1">
                 <i class="fa-solid fa-xmark hover:cursor-pointer" @click="removeItem(item)"></i>
-                <button class="">
+                <button class="" @click="searchByFilter(item)">
                   {{item}}
                 </button>
               </div>
@@ -40,6 +40,9 @@ export default {
     removeItem(item){
       this.$store.dispatch('removeItemFromList',{searchTerm: this.searchTerm, itemName: item})
      // console.log('remove item from list', item)
+    },
+    searchByFilter(item){
+      this.$store.dispatch('searchByFilter',{searchTerm: this.searchTerm, filterName: item})
     }
   }
 }

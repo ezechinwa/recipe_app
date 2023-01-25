@@ -27,8 +27,11 @@ export default {
         })
 
     },
+    mutateFetchCustomerFoodItemByFilter(state,payload){
+        state.items = payload
+    },
     mutateRemoveItem(state,payload){
-        console.log('mutateRemoveItem payload', payload)
+        //console.log('mutateRemoveItem payload', payload)
         if(payload.searchTerm == "category"){
             state.categories = state.categories.filter(e => e !== payload.itemName)
         }
