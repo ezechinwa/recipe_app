@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col space-y-3">
        <h1 class="text-3xl text-gray-700"> {{ title }}</h1>
-        <div class="h-60 rounded-2xl border border-gray-500 shadow text-gray-500">
+        <div class="min-h-60 rounded-2xl border border-gray-500 shadow text-gray-500">
           <div class="flex flex-wrap">
             <div v-for="(item, index) in items">
               <div class="bg-white flex rounded-xl items-center mx-3 my-3 space-x-10 p-1">

@@ -5,8 +5,8 @@
 
         <div class="mt-16 px-6 flex flex-col space-y-10">
           <MenuItem title="Category" :items=getCategories />
-          <MenuItem title="Area" :items=items />
-          <MenuItem title="Tags" :items=items />
+          <MenuItem title="Area" :items=getAreas />
+          <MenuItem title="Tags" :items=getTags />
         </div>
 
       <div class="h-56 w-full"></div>
@@ -58,6 +58,12 @@ export default {
     },
     getCategories(){
       return this.$store.getters.getCategories
+    },
+    getAreas(){
+      return this.$store.getters.getAreas
+    },
+    getTags(){
+      return this.$store.getters.getTags
     }
   },
   data(){
