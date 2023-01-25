@@ -18,7 +18,7 @@
           </div>
         </div>
         <div class="flex flex-col relative">
-          <div class="relative h-10 border border-gray-400 rounded-xl bg-transparent hover:cursor-pointer hover:bg-white hover:border-b-0 hover:rounded-none hover:rounded-t-lg">
+          <div class="relative h-10 border border-gray-400 rounded-xl bg-transparent hover:cursor-pointer hover:bg-white hover:border-b-0 hover:rounded-none hover:rounded-t-lg" @mouseover="hover = true"  @mouseleave="hover = false">
             <button class="border-0 rounded-md py-2 px-4 block w-full leading-normal text-center bg-transparent hover:cursor-pointer disabled text-gray-500"> FAVOURITES </button>
             <div class="absolute right-10 inset-y-0 flex items-center justify-end ">
               <i class="fa-regular fa-heart text-gray-500"></i>
@@ -26,7 +26,8 @@
 
           </div>
 
-          <div class="flex flex-col bg-white rounded-none mt-0 border-l border-r border-b p-2 border-gray-400 rounded-b-lg absolute top-10 z-50 w-full" v-show="favorites.length>0">
+          <div class="flex flex-col bg-white rounded-none mt-0 border-l border-r border-b p-2 border-gray-400 rounded-b-lg absolute top-10 z-50 w-full"  @mouseover="hover = true"
+               @mouseleave="hover = false" v-show="favorites.length>0 && hover">
             <div v-for="(favorite , index) in favorites">
               <FavoriteItems :idMeal="favorite.idMeal" :strMeal="favorite.strMeal" :strMealThumb="favorite.strMealThumb"/>
             </div>
@@ -50,6 +51,7 @@ export default {
   components: {FavoriteItems},
   data(){
     return {
+      hover: false,
       showMenuItem: true,
       search_item: ''
     }
