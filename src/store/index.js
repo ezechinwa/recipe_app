@@ -12,6 +12,7 @@ const store = createStore({
     // },
     state() {
         return {
+            base_url: 'https://www.themealdb.com/api/json/v1/1/',
             toggleMenu: true,
             searched_item: 'Soup',
             items:[],

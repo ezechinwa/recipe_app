@@ -7,7 +7,7 @@ export default {
     fetchSearchItem(context,payload) {
 
         // context.commit('fetchSearchItem action triggered')
-        const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${payload.searched_item}`
+        const url = `${context.state.base_url}search.php?s=${payload.searched_item}`
 
         axios.get(url)
             .then(response => {
@@ -20,7 +20,9 @@ export default {
                 context.commit('mutateFetchCustomerFoodItem',[])
                 // this.errors.push(e)
             })
-
+    },
+    removeItemFromList(context,payload){
+        context.commit('mutateRemoveItem', payload)
 
     }
 }

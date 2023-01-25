@@ -4,9 +4,9 @@
     <div class="w-full lg:w-1/5 bg-custom_gray-50 mt-0" v-if="showMenu">
 
         <div class="mt-16 px-6 flex flex-col space-y-10">
-          <MenuItem title="Category" :items=getCategories />
-          <MenuItem title="Area" :items=getAreas />
-          <MenuItem title="Tags" :items=getTags />
+          <MenuItem title="Category" searchTerm="category" :items=getCategories />
+          <MenuItem title="Area" searchTerm="area" :items=getAreas />
+          <MenuItem title="Tags" searchTerm="tags" :items=getTags />
         </div>
 
       <div class="h-56 w-full"></div>

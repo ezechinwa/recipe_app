@@ -12,19 +12,31 @@ export default {
         state.tags = []
 
         payload.forEach( (item, index)=>{
-            if(!state.categories.includes(item.strCategory)){
+            if(!state.categories.includes(item.strCategory) && item.strCategory !== null){
                 state.categories.push(item.strCategory)
             }
 
-            if(!state.areas.includes(item.strArea)){
+            if(!state.areas.includes(item.strArea) && item.strArea !== null ){
                 state.areas.push(item.strArea)
             }
 
-            if(!state.tags.includes(item.strTags)){
+            if(!state.tags.includes(item.strTags) && item.strTags !== null ){
                 state.tags.push(item.strTags)
             }
 
         })
 
+    },
+    mutateRemoveItem(state,payload){
+        console.log('mutateRemoveItem payload', payload)
+        if(payload.searchTerm == "category"){
+            state.categories = state.categories.filter(e => e !== payload.itemName)
+        }
+        if(payload.searchTerm == "area"){
+            state.areas =  state.areas.filter(e => e !== payload.itemName)
+        }
+        if(payload.searchTerm == "tags"){
+            state.tags = state.tags.filter(e => e !== payload.itemName)
+        }
     }
 }
