@@ -45,20 +45,6 @@ export default {
     },
     removeItemFromList(context,payload){
 
-        const url = `${context.state.base_url}search.php?s=${payload.searched_item}`
-
-        axios.get(url)
-            .then(response => {
-                // JSON responses are automatically parsed.
-                console.log( "fetchSearchItem response",response.data)
-                context.commit('mutateFetchCustomerFoodItem',response.data.meals)
-            })
-            .catch(e => {
-                console.log( "fetchSearchItem error",e)
-                context.commit('mutateFetchCustomerFoodItem',[])
-                // this.errors.push(e)
-            })
-
         context.commit('mutateRemoveItem', payload)
 
     },
