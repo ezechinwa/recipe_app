@@ -16,6 +16,7 @@ const store = createStore({
             toggleMenu: true,
             searched_item: 'Soup',
             items:[],
+            favorites: [],
             categories: [],
             areas: [],
             tags: []

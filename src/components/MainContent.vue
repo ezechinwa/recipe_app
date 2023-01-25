@@ -19,7 +19,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mt-16" >
 <!--        'idMeal','strMeal','strMealThumb'-->
         <div  v-for="(meal,i) in getFoodItems">
-          <FoodCards :idMeal=meal.id :strMeal=meal.strMeal :strMealThumb=meal.strMealThumb />
+          <FoodCards :idMeal=meal.idMeal :strMeal=meal.strMeal :strMealThumb=meal.strMealThumb />
         </div>
 
         <DetailCards class=" col-span-1  md:col-span-2 lg:col-span-3" />
@@ -46,7 +46,7 @@ export default {
   name: "MainContent",
   components: {MenuItem, DetailCards, FoodCards},
   mounted(){
-    console.log("getfooditems", this.getFoodItems)
+  //  console.log("getfooditems", this.getFoodItems)
   },
 
   computed:{

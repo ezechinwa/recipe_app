@@ -41,5 +41,20 @@ export default {
         if(payload.searchTerm == "tags"){
             state.tags = state.tags.filter(e => e !== payload.itemName)
         }
+    },
+    mutateAddFavoritesItems(state,payload){
+
+         // check if item already exists
+        const isObjectPresent =  state.favorites.find((o) => o.idMeal === payload[0]);
+        if (!isObjectPresent) {
+            state.favorites.push({
+                idMeal: payload[0], strMealThumb:payload[1], strMeal:payload[2]
+            })
+        }
+
+
+
+
+      //  console.log('mutateAddFavoritesItems', state.favorites)
     }
 }

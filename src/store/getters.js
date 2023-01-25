@@ -13,5 +13,8 @@ export default {
     },
     getFoodItems(state){
         return state.items
+    },
+    getFavorites(state){
+        return state.favorites
     }
 }

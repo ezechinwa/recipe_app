@@ -31,20 +31,15 @@ export default {
             url = `${context.state.base_url}filter.php?a=${payload.filterName}`
         }
         if(payload.searchTerm == "tags"){
-            url = `${context.state.base_url}filter.php?t=${payload.filterName}`
+            url = `${context.state.base_url}search.php?s=${payload.filterName}`
         }
 
         axios.get(url)
             .then(response => {
-                // JSON responses are automatically parsed.
-               // console.log( "fetchSearchItem response",response.data)
                 context.commit('mutateFetchCustomerFoodItemByFilter',response.data.meals)
             })
             .catch(e => {
-               console.log( "fetchSearchItem error",e)
-                console.log( "fetchSearchItem url",url)
                 context.commit('mutateFetchCustomerFoodItemByFilter',[])
-                // this.errors.push(e)
             })
 
     },
@@ -66,5 +61,8 @@ export default {
 
         context.commit('mutateRemoveItem', payload)
 
+    },
+    actionItemToFavorites(context,payload){
+        context.commit('mutateAddFavoritesItems', payload)
     }
 }
