@@ -4,7 +4,7 @@
     <div class="w-full lg:w-1/5 bg-custom_gray-50 mt-0" v-if="showMenu">
 
         <div class="mt-16 px-6 flex flex-col space-y-10">
-          <MenuItem title="Category" :items=items />
+          <MenuItem title="Category" :items=getCategories />
           <MenuItem title="Area" :items=items />
           <MenuItem title="Tags" :items=items />
         </div>
@@ -55,6 +55,9 @@ export default {
     },
     getFoodItems(){
       return this.$store.getters.getFoodItems
+    },
+    getCategories(){
+      return this.$store.getters.getCategories
     }
   },
   data(){

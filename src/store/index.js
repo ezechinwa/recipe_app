@@ -14,7 +14,10 @@ const store = createStore({
         return {
             toggleMenu: true,
             searched_item: 'Soup',
-            items:[]
+            items:[],
+            categories: [],
+            areas: [],
+            tags: []
         }
     },
     mutations: rootMutations,
