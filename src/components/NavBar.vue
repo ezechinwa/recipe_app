@@ -8,7 +8,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
         <div class="lg:col-span-2 ">
           <div class="relative border border-gray-400 rounded-xl flex-1 ">
-            <input type="text" class="bg-transparent border-0 py-2 px-4 block w-full leading-normal mx-4" placeholder="SEARCH" v-model="search_item" v-on:keyup.enter="search_item_method">
+            <input type="text" class="bg-transparent border-0 py-2 px-4 block w-full leading-normal mx-4" placeholder="SEARCH" v-model="search_item" v-on:keyup.enter="search_item_method" @input="search_item_method">
             <div class="absolute inset-y-0 m-2 flex items-center">
               <svg class="h-4 w-4 text-gray-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>

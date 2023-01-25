@@ -22,16 +22,12 @@
           <FoodCards :idMeal=meal.id :strMeal=meal.strMeal :strMealThumb=meal.strMealThumb />
         </div>
 
-<!--        <FoodCards/>-->
-<!--        <FoodCards/>-->
-<!--        <DetailCards class=" col-span-1  md:col-span-2 lg:col-span-3" />-->
-<!--         <FoodCards/>-->
-<!--        <FoodCards/>-->
-<!--        <FoodCards/>-->
+        <DetailCards class=" col-span-1  md:col-span-2 lg:col-span-3" />
+
 
       </div>
 
-       <button @click="showitems">Show items</button>
+<!--       <button @click="showitems">Show items</button>-->
       <div class="h-56 w-full"></div>
     </div>
     </Transition>
